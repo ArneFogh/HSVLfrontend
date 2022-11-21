@@ -105,16 +105,15 @@ footer{
 .indexCover input[type=text]{
     padding: 8px;
     border-radius: 5px;
-    font-size: 17px;
+    font-size: 18px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 65%;
-    width: 250px;
-    height: 40px;
+    max-width: 350px;
+    height: 50px;
     border: none;
-
 }
 
 /*
