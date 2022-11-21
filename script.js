@@ -9,7 +9,7 @@ const navLinks = document.querySelectorAll("nav a").forEach(link => {
     link.classList.add("active");
 });
 
-fetch('http://localhost:3000/activitiesData')
+fetch('http://localhost:3000/data')
     .then(response => response.json())
     .then(HSVL => {
         activities(HSVL);
