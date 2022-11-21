@@ -9,9 +9,13 @@ function activities(HSVL){
     const ul = document.querySelector("ul.activityList");
     for (let i = 0; i < HSVL.length; i++) {
         const activity = HSVL[i].activity;
+        const popularity = HSVL[i].popularity
         console.log(activity)
         const li = document.createElement("li");
-        li.innerHTML = `<p>${activity}</p>`;
+        li.innerHTML = `
+            <p>${activity}</p>
+            <p>Popularity: ${popularity}</p>         
+                        `;
         ul.appendChild(li);
     }
 }
