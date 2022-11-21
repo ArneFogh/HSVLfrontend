@@ -6,6 +6,18 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hvad skal vi lave</title>
+
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+            integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+            crossorigin=""
+    />
+    <script
+            src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+            integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+            crossorigin=""
+    ></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,12 +38,18 @@
     </div>
     <div class="indexCover">
         <img src="https://cityhearts.dk/wp-content/uploads/2019/08/WEKNOWAPLACE-2.jpg" alt="">
-        <input type="text" class="activityList" onkeyup="searchBarFunction()" placeholder="Søg efter aktiviteter...">
-        <button></button>
+        <!-- <input type="text" class="activityList" onkeyup="searchBarFunction()" placeholder="Søg efter aktiviteter..."> -->
     </div>
 </header>
 <section class="index">
-
+    <div class="headline">
+        <h1>Hvad skal vi lave</h1>
+    </div>
+    <!--
+    <div class="mapBox">
+        <div id="map"></div>
+    </div>
+    -->
 </section>
 <footer>
     &copy; 2022 HvadSkalViLave.dk

@@ -10,6 +10,8 @@
     border-radius: 15px;
     width: 95%;
     margin: 20px auto auto;
+    height: 50px;
+    align-items: center;
 }
 
 .nav-links li{
@@ -74,7 +76,7 @@ footer{
 }
 
 .activityCover{
-    width: 95%;
+    width: 70%;
     margin: 30px auto 15px;
 }
 
@@ -116,6 +118,77 @@ footer{
     border: none;
 }
 
+.accountCover{
+    width: 60%;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.accountCover img{
+    width: 100%;
+    height: 570px;
+    object-fit: cover;
+}
+
+#account{
+    columns: 2;
+}
+
+.signIn, .getStarted{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #D0D4DC;
+    border-radius: 15px;
+}
+
+#account h2{
+    font-size: 24px;
+}
+
+.getStarted button{
+    background-color: #50D8D7;
+    color: #3C414C;
+}
+.signIn  button{
+    background-color: #4F5165;
+    color: #547AA5;
+}
+
+#account button{
+    border: none;
+    border-radius: 15px;
+    width: 60%;
+}
+
+#account button:hover{
+    background-color: #3C414C;
+    color: #5392B2;
+}
+
+.favouritesCover{
+    width: 70%;
+    margin: auto;
+}
+
+.favouritesCover img{
+    width: 100%;
+}
+
+.mapBox{
+    padding-top: 30px;
+    width: 60%;
+    height: 500px;
+    margin: auto;
+}
+
+#map {
+    border-radius: 15px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 /*
 color palette https://coolors.co/293132-474044-4f5165-547aa5-50d8d7
  */

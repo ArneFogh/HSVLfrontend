@@ -1,3 +1,4 @@
+
 const activePage = window.location.pathname;
 console.log(activePage)
 
@@ -13,6 +14,7 @@ fetch('http://localhost:3000/data')
     .then(response => response.json())
     .then(HSVL => {
         activities(HSVL);
+
 
     })
 /*
@@ -58,3 +60,20 @@ function activities(HSVL){
         ul.appendChild(li);
     }
 }
+/*
+const map = L.map("map").setView([55.69, 12.56], 10.5);
+
+const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+}).addTo(map);
+
+for (let i = 0; i < HSVL.length; i++) {
+    L.circle([HSVL[i].latitude, HSVL[i].longitude]).addTo(map);
+}
+
+
+*/
+
+
