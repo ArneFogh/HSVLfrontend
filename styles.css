@@ -36,6 +36,21 @@ footer{
     padding-left: 20px;
 }
 
+.activityList li{
+    list-style-type: none;
+    border: 1px solid black;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+}
+
+.activityList{
+    padding: 0;
+    width: 70%;
+    margin: auto;
+}
+
 /*
 color palette https://coolors.co/293132-474044-4f5165-547aa5-50d8d7
  */

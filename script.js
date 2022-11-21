@@ -13,7 +13,7 @@ function activities(HSVL){
         console.log(activity)
         const li = document.createElement("li");
         li.innerHTML = `
-            <p>${activity}</p>
+            <h2>${activity}</h2>
             <p>Popularity: ${popularity}</p>         
                         `;
         ul.appendChild(li);
