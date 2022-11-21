@@ -1,6 +1,8 @@
 
+// noinspection JSVoidFunctionReturnValueUsed
+
 const activePage = window.location.pathname;
-console.log(activePage)
+
 
 const navLinks = document.querySelectorAll("nav a").forEach(link => {
     if (!link.href.includes(`${activePage}`)) {
@@ -10,13 +12,14 @@ const navLinks = document.querySelectorAll("nav a").forEach(link => {
     link.classList.add("active");
 });
 
+
 fetch('http://localhost:3000/data')
     .then(response => response.json())
     .then(HSVL => {
         activities(HSVL);
 
+    });
 
-    })
 /*
 function searchBarFunction() {
     // Declare variables
@@ -40,6 +43,7 @@ function searchBarFunction() {
 
  */
 
+
 function activities(HSVL){
     const ul = document.querySelector("ul.activityList");
     for (let i = 0; i < HSVL.length; i++) {
@@ -59,21 +63,30 @@ function activities(HSVL){
                         `;
         ul.appendChild(li);
     }
-}
-/*
-const map = L.map("map").setView([55.69, 12.56], 10.5);
 
-const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution:
-        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-}).addTo(map);
-
-for (let i = 0; i < HSVL.length; i++) {
-    L.circle([HSVL[i].latitude, HSVL[i].longitude]).addTo(map);
 }
 
 
-*/
+fetch('http://localhost:3000/locations')
+    .then(response => response.json())
+    .then(locationData =>{
+        locationsOnMap(locationData);
+
+    })
+
+function locationsOnMap(locationData){
+    const map = L.map("map").setView([55.72, 12.56], 10.5);
+
+    const tiles = L.tileLayer("https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=89TnfA8v1mRlkatNruN7", {
+        maxZoom: 19,
+        attribution:
+            '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map);
+
+    for (let i = 0; i < locationData.length; i++) {
+        L.marker([locationData[i].latitude, locationData[i].longitude]).addTo(map);
+    }
+}
+
 
 
