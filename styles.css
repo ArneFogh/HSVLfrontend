@@ -5,7 +5,7 @@
 .nav-links{
     display: flex;
     justify-content: space-evenly;
-    background-color: #50D8D7;
+    background-color: #4F5165;
     padding: 10px;
     border-radius: 15px;
     width: 95%;
@@ -17,15 +17,18 @@
 }
 
 .nav-links a{
-    color: #293132;
+    color: #547AA5;
     font-weight: 500;
     font-size: 18px;
     text-decoration: none;
 }
 
 .nav-links a:hover{
-    color: #547AA5;
-    font-weight: 700;
+    color: #50D8D7;
+}
+
+.nav-links a:is(:link, :active, :visited).active{
+    color: #50D8D7;
 }
 
 .index{
@@ -51,6 +54,42 @@ footer{
     margin: auto;
 }
 
+.activityList p{
+    font-weight: 500;
+}
+
+.activityList h2{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.activityList span{
+    font-weight: 700;
+}
+
+.activityCover img{
+    width: 100%;
+    opacity: 80%;
+    border-radius: 15px;
+}
+
+.activityCover{
+    width: 95%;
+    margin: 30px auto 15px;
+}
+
+.headline h1{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #547AA5;
+}
+
+.nav-links li{
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px 15px;
+}
 /*
 color palette https://coolors.co/293132-474044-4f5165-547aa5-50d8d7
  */
