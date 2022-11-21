@@ -1,5 +1,8 @@
-fetch()
-
+fetch('http://localhost:3000/')
+    .then(response => response.json())
+    .then(function (HSVL) {
+        renderHSVL(HSVL)
+    })
 
 function renderHSVL(HSVL){
     console.log(HSVL)
@@ -9,6 +12,8 @@ function renderHSVL(HSVL){
         const places = HSVL[i];
         console.log(places)
         const li = document.createElement("li");
+        li.innerHTML = "hejheje"
+        ul.appendChild(li)
 
     }
 }
