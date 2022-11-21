@@ -1,19 +1,17 @@
-fetch('http://localhost:3000/')
+fetch('http://localhost:3000/activities')
     .then(response => response.json())
-    .then(function (HSVL) {
-        renderHSVL(HSVL)
+    .then(HSVL => {
+        activities(HSVL);
+
     })
 
-function renderHSVL(HSVL){
-    console.log(HSVL)
-    const ul = document.querySelector("ul.HSVList");
-    console.log(ul);
+function activities(HSVL){
+    const ul = document.querySelector("ul.activityList");
     for (let i = 0; i < HSVL.length; i++) {
-        const places = HSVL[i];
-        console.log(places)
+        const activity = HSVL[i].activity;
+        console.log(activity)
         const li = document.createElement("li");
-        li.innerHTML = "hejheje"
-        ul.appendChild(li)
-
+        li.innerHTML = `<p>${activity}</p>`;
+        ul.appendChild(li);
     }
 }
