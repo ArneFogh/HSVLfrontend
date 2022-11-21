@@ -23,13 +23,15 @@ function activities(HSVL){
         const popularity = HSVL[i].popularity;
         const adress = HSVL[i].location;
         const city = HSVL[i].city;
+        const season = HSVL[i].season;
         console.log(activity);
         const li = document.createElement("li");
         li.innerHTML = `
             <h2>${activity}</h2>
-            <p><span>Popularity:</span> ${popularity}</p>  
-            <p><span>Location:</span> ${adress}</p> 
-            <p><span>By:</span> ${city}</p>      
+            <p><span>Popularitet:</span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${adress}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p>   
                         `;
         ul.appendChild(li);
     }

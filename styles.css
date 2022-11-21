@@ -5,7 +5,7 @@
 .nav-links{
     display: flex;
     justify-content: space-evenly;
-    background-color: #4F5165;
+    background-color: #3C414C;
     padding: 10px;
     border-radius: 15px;
     width: 95%;
@@ -17,7 +17,7 @@
 }
 
 .nav-links a{
-    color: #547AA5;
+    color: #5392B2;
     font-weight: 500;
     font-size: 18px;
     text-decoration: none;
@@ -86,10 +86,37 @@ footer{
 }
 
 .nav-links li{
-    border: 1px solid black;
     border-radius: 15px;
     padding: 10px 15px;
+    background-color: #4F5165;
 }
+
+.indexCover img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.indexCover{
+    width: 75%;
+    margin: 30px auto auto;
+    justify-content: center;
+}
+
+.indexCover input[type=text]{
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 17px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 65%;
+    width: 250px;
+    height: 40px;
+    border: none;
+
+}
+
 /*
 color palette https://coolors.co/293132-474044-4f5165-547aa5-50d8d7
  */
