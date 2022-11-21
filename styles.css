@@ -1,0 +1,41 @@
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #50D8D7;
+    padding: 10px;
+    border-radius: 15px;
+    width: 95%;
+    margin: 20px auto auto;
+}
+
+.nav-links li{
+    list-style-type: none;
+}
+
+.nav-links a{
+    color: #293132;
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.nav-links a:hover{
+    color: #547AA5;
+    font-weight: 700;
+}
+
+.index{
+    height: 100vh;
+}
+
+footer{
+    padding-left: 20px;
+}
+
+/*
+color palette https://coolors.co/293132-474044-4f5165-547aa5-50d8d7
+ */
