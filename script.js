@@ -56,7 +56,7 @@ function registrerInput(cities){
         console.log(inputElement);
         console.log(inputElement.value);
         const zipCode = inputElement.value;
-        console.log(zipCode);
+
         const filteredLocations = [];
         for (let i = 0; i < cities.length; i++) {
             const citiesList = cities[i];
