@@ -1,9 +1,8 @@
 
 // noinspection JSVoidFunctionReturnValueUsed
 
+//Highlighter hvilken side vi er på i navbar
 const activePage = window.location.pathname;
-
-
 const navLinks = document.querySelectorAll("nav a").forEach(link => {
     if (!link.href.includes(`${activePage}`)) {
         return;
@@ -12,13 +11,14 @@ const navLinks = document.querySelectorAll("nav a").forEach(link => {
     link.classList.add("active");
 });
 
+// Fetch sender en request til det endpoint, hvor vores samlede data på aktiviteterne befinder sig.
 fetch('http://localhost:3000/data')
     .then(response => response.json())
     .then(HSVL => {
         activities(HSVL);
     });
 
-
+// Listen med activities, printet på html i en ul.
 function activities(HSVL){
     const ul = document.querySelector("ul.activityList");
     for (let i = 0; i < HSVL.length; i++) {
@@ -40,6 +40,7 @@ function activities(HSVL){
 
 }
 
+// Endpoint til data om cities, hvor vi sender en request til API.
 fetch('http://localhost:3000/cities')
     .then(response => response.json())
     .then(cities => {
@@ -73,3 +74,23 @@ function registrerInput(cities){
     })
 }
 
+// const searchInput = document.querySelector("")
+
+/*
+const searchInput = document.getElementById("searchInput")
+const inputField = document.getElementById("inputField").value
+function searchFunc(jsonIMDB) {
+    searchInput.addEventListener("click", e => {
+
+        for (let i = 0; i < jsonIMDB.length; i++) {
+            let inputFromUser = inputField
+            let movieValue = jsonIMDB[i].title
+            if (inputFromUser.includes(movieValue)) {
+                let createResult = document.createElement("li")
+                createResult.innerHTML = movieValue
+                btnMovies.appendChild(createResult)
+            }
+        }
+    })
+}
+*/
