@@ -11,41 +11,11 @@ const navLinks = document.querySelectorAll("nav a").forEach(link => {
     console.log(`${activePage}`);
     link.classList.add("active");
 });
-/*
-fetch('http://localhost:3000/activities')
-    .then(response => response.json())
-    .then(userSearchInput => {
-        searchBarFunction(userSearchInput);
-
-    });
-
-function searchBarFunction(userSearchInput) {
-    // Declare variables
-    let input, filter, ul, li, p, i, txtValue;
-    input = document.querySelector('#userInput');
-    filter = input.value.toUpperCase();
-    ul = document.querySelector(".locationList");
-    li = ul.querySelector('li');
-
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-        p = li[i].getElementsByTagName("p")[0];
-        txtValue = p.textContent || p.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
-
- */
 
 fetch('http://localhost:3000/data')
     .then(response => response.json())
     .then(HSVL => {
         activities(HSVL);
-
     });
 
 
@@ -70,6 +40,36 @@ function activities(HSVL){
 
 }
 
+fetch('http://localhost:3000/cities')
+    .then(response => response.json())
+    .then(cities => {
+        registrerInput(cities);
+    });
 
+function registrerInput(cities){
+    console.log(cities)
+    const btn = document.querySelector('button.filter');
+    console.log(btn)
+    btn.addEventListener('click', function (){
+        console.log("button cliked");
+        const inputElement = document.querySelector('input#userInput');
+        console.log(inputElement);
+        console.log(inputElement.value);
+        const zipCode = inputElement.value;
+        console.log(zipCode);
+        const filteredLocations = [];
+        for (let i = 0; i < cities.length; i++) {
+            const citiesList = cities[i];
+            console.log(citiesList.zip_code)
+            console.log(zipCode)
+            console.log(parseInt(citiesList.zip_code) > parseInt(zipCode))
+            if (citiesList.zip_code > zipCode){
+                filteredLocations.push(cities)
+            }
+        }
+        const filteredCititesFilter = cities.filter(citiesList => parseInt(citiesList.zip_code) > parseInt(zipCode))
 
+        console.log(filteredLocations)
+    })
+}
 
