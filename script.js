@@ -12,7 +12,7 @@ const navLinks = document.querySelectorAll("nav a").forEach(link => {
 });
 
 // Fetch sender en request til det endpoint, hvor vores samlede data på aktiviteterne befinder sig.
-fetch('http://localhost:3000/data')
+fetch('https://hsvl.onrender.com/data')
     .then(response => response.json())
     .then(HSVL => {
         activities(HSVL);
@@ -41,7 +41,7 @@ function activities(HSVL){
 }
 
 // Endpoint til data om cities, hvor vi sender en request til API.
-fetch('http://localhost:3000/cities')
+fetch('https://hsvl.onrender.com/cities')
     .then(response => response.json())
     .then(cities => {
         registrerInput(cities);
