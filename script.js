@@ -12,7 +12,7 @@ const navLinks = document.querySelectorAll("nav a").forEach(link => {
     link.classList.add("active");
 });
 
-fetch('http://localhost:3000/data')
+fetch('https://hsvl.onrender.com/data')
     .then(response => response.json())
     .then(HSVL => {
         activities(HSVL);
@@ -40,7 +40,7 @@ function activities(HSVL){
 
 }
 
-fetch('http://localhost:3000/cities')
+fetch('https://hsvl.onrender.com/cities')
     .then(response => response.json())
     .then(cities => {
         registrerInput(cities);
