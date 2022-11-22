@@ -51,7 +51,7 @@ function registrerInput(cities){
     const btn = document.querySelector('button.filter');
     console.log(btn)
     btn.addEventListener('click', function (){
-        console.log("button cliked");
+        console.log("button clicked");
         const inputElement = document.querySelector('input#userInput');
         console.log(inputElement);
         console.log(inputElement.value);
@@ -62,9 +62,9 @@ function registrerInput(cities){
             const citiesList = cities[i];
             console.log(citiesList.zip_code)
             console.log(zipCode)
-            console.log(parseInt(citiesList.zip_code) > parseInt(zipCode))
-            if (citiesList.zip_code > zipCode){
-                filteredLocations.push(cities)
+            console.log(parseFloat(citiesList.zip_code) > parseFloat(zipCode))
+            if (citiesList.zip_code < zipCode) {
+                filteredLocations.push(citiesList)
             }
         }
         const filteredCititesFilter = cities.filter(citiesList => parseInt(citiesList.zip_code) > parseInt(zipCode))
