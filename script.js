@@ -40,6 +40,33 @@ function activities(HSVL){
 
 }
 
+fetch('https://hsvl.onrender.com/mostPopulare')
+    .then(response => response.json())
+    .then(mostPopulare => {
+        populareActivities(mostPopulare);
+    });
+
+function populareActivities(mostPopulare){
+    const ul = document.querySelector("ul.topPopulare");
+    for (let i = 0; i < mostPopulare.length; i++) {
+        const activity = mostPopulare[i].activity;
+        const popularity = mostPopulare[i].popularity;
+        const address = mostPopulare[i].location;
+        const city = mostPopulare[i].city;
+        const season = mostPopulare[i].season;
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <h2>${activity}</h2>
+            <p><span><p2>Popularitet:</p2></span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${address}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p>   
+                        `;
+        ul.appendChild(li);
+    }
+
+}
+
 // Endpoint til data om cities, hvor vi sender en request til API.
 fetch('https://hsvl.onrender.com/cities')
     .then(response => response.json())

@@ -238,6 +238,28 @@ footer{
 .aboutHeaderCover img{
     width: 100%;
 }
+
+.topPopulare{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+}
+
+.topPopulare li{
+    text-align: center;
+    padding: 30px;
+    list-style-type: none;
+    width: 100%;
+}
+
+.topPopulare p2{
+    color: #C6102F;
+}
+
+.topPopulare span{
+    font-weight: 700;
+}
 /*
 color palette https://coolors.co/293132-474044-4f5165-547aa5-50d8d7
  */
