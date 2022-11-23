@@ -86,13 +86,16 @@ function renderActivities(HSVL){
             const address = HSVL[i].location;
             const city = HSVL[i].city;
             const season = HSVL[i].season;
+            const locationNumber = HSVL[i].location_id;
             const li = document.createElement("li");
             li.innerHTML = `
             <h2>${activity}</h2>
+            <hr>
             <p><span>Popularitet:</span> ${popularity}</p>  
             <p><span>Adresse:</span> ${address}</p> 
             <p><span>By:</span> ${city}</p>   
-            <p><span>Årstid:</span> ${season}</p>   
+            <p><span>Årstid:</span> ${season}</p> 
+            <p><span>Nummer:</span> ${locationNumber}</p>  
                         `;
             activityUl.appendChild(li);
         }
@@ -313,6 +316,9 @@ function registrerInput(activities){
         const filteredActivities = [];
         for (let i = 0; i < activities.length; i++) {
             if (activities[i].activity.toLowerCase().includes(activityName)){
+                filteredActivities.push(activities[i])
+            }
+            if (activities[i].city.toLowerCase().includes(activityName)){
                 filteredActivities.push(activities[i])
             }
         }
