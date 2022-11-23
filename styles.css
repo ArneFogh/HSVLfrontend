@@ -40,11 +40,16 @@ footer{
 
 .activityList li{
     list-style-type: none;
-    border: 1px solid black;
+    border: 1px solid #547AA5;
     margin-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 15px;
+    background-color: #C7D0D1;
+}
+
+.activityList li:hover{
+    background-color: #9AABAC;
 }
 
 .activityList{
