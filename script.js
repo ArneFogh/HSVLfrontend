@@ -16,8 +16,8 @@ fetch('https://hsvl.onrender.com/data')
     .then(response => response.json())
     .then(HSVL => {
         renderActivities(HSVL);
+        renderNorrebro(HSVL);
         registrerInput(HSVL);
-        norrebro(HSVL)
     });
 
 // Listen med activities, printet på html i en ul.
@@ -96,9 +96,10 @@ function filterFunction() {
     }
 }
 
+
 //NØRREBRO
 
-function norrebro(HSVL){
+function renderNorrebro(HSVL){
     try {
         const norrebroUL = document.querySelector("ul#norrebroList");
         console.log(norrebroUL)
@@ -110,7 +111,8 @@ function norrebro(HSVL){
             const city_id = HSVL[i].city_id;
             const season = HSVL[i].season;
             const li = document.createElement("li");
-            if (city_id === 1)
+            if (city_id === 1){
+
                 li.innerHTML = `
             <h2>${activity}</h2>
             <p><span>Popularitet:</span> ${popularity}</p>  
@@ -119,6 +121,7 @@ function norrebro(HSVL){
             <p><span>Årstid:</span> ${season}</p>   
                         `;
             norrebroUL.appendChild(li);
+            }
         }
     } catch (e) {
         
@@ -143,6 +146,8 @@ function registrerInput(activities){
         renderActivities(filteredActivities)
     })
 }
+
+
 
 
 /*

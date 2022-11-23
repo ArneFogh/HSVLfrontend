@@ -42,15 +42,17 @@
     <div class="indexCover">
         <img src="https://cityhearts.dk/wp-content/uploads/2019/08/WEKNOWAPLACE-2.jpg" alt="">
         <div class="filterSearch">
-            <button onclick="cityDropDown()" id="btnCityDrop">Vælg en by</button>
-            <div id="dropDownCity" class="dropdownContent">
-                <input type="text" id="dropInput" placeholder="Vælg en by eller bydel..." onkeyup="filterFunction()">
-                <a href="#København_N">København N</a>
-                <a href="#København_Ø">København Ø</a>
-                <a href="#Frederiksberg">Frederiksberg</a>
-                <a href="#København_K">København K</a>
-                <a href="#Nordhavn">Nordhavn</a>
-                <a href="#Klampenborg">Klampenborg</a>
+            <div class="filterSearchBar">
+                <button onclick="cityDropDown()" id="btnCityDrop">Vælg en by</button>
+                <div id="dropDownCity" class="dropdownContent">
+                    <input type="text" id="dropInput" placeholder="Vælg en by eller bydel..." onkeyup="filterFunction()">
+                    <a href="kbh_n.html">København N</a>
+                    <a href="#København_Ø">København Ø</a>
+                    <a href="#Frederiksberg">Frederiksberg</a>
+                    <a href="#København_K">København K</a>
+                    <a href="#Nordhavn">Nordhavn</a>
+                    <a href="#Klampenborg">Klampenborg</a>
+                </div>
             </div>
         </div>
     </div>
@@ -59,19 +61,18 @@
     <div class="headline">
         <h1>HVAD SKAL VI LAVE?</h1>
     </div>
-    <div id="kbhN">
-        <ul id="norrebroList">
-
-        </ul>
-    </div>
     <div class="underline">
         <hr>
         <h2>De tre mest populære aktiviteter i København</h2>
         <hr>
     </div>
-    <ul class="topPopulare"></ul>
+
 
 </section>
+
+<div class="topActivityInCity">
+    <ul id="norrebroList"></ul>
+</div>
 
 <div class="mapBox">
     <div id="map"></div>
