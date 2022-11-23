@@ -75,27 +75,19 @@ fetch('https://hsvl.onrender.com/cities')
     });
 
 function registrerInput(cities){
-    console.log(cities)
     const btn = document.querySelector('button.filter');
-    console.log(btn)
     btn.addEventListener('click', function (){
         console.log("button clicked");
         const inputElement = document.querySelector('input#userInput');
-        console.log(inputElement);
-        console.log(inputElement.value);
         const zipCode = inputElement.value;
 
         const filteredLocations = [];
         for (let i = 0; i < cities.length; i++) {
             const citiesList = cities[i];
-            console.log(citiesList.zip_code)
-            console.log(zipCode)
-            console.log(parseFloat(citiesList.zip_code) > parseFloat(zipCode))
             if (citiesList.zip_code < zipCode) {
                 filteredLocations.push(citiesList)
             }
         }
-        const filteredCititesFilter = cities.filter(citiesList => parseInt(citiesList.zip_code) > parseInt(zipCode))
 
         console.log(filteredLocations)
     })
@@ -120,4 +112,23 @@ function searchFunc(jsonIMDB) {
         }
     })
 }
-*/
+
+
+// lav inputs i html og button, alle med id. placeholder i inputs hvor der står, det der skal stå i feltet
+// få fat i dine input fields med doc.querySelector og giv dem en variabel
+//LOG DEM UD
+// få fat i knappen på samme måde
+const buttonName = document.querySelector()
+buttonName.addEventListener('click', createNewActivity());
+
+function createNewActivity() {
+    const text = textInput.value
+    const text2 = text2input.value
+    const text3 = text3input.value
+
+
+}
+
+// lav en const med keys af det der skal ind. body: JSON.stringify(*navn på const med keys*)
+
+ */
