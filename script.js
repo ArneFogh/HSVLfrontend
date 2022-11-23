@@ -15,7 +15,6 @@ const navLinks = document.querySelectorAll("nav a").forEach(link => {
 fetch('https://hsvl.onrender.com/data')
     .then(response => response.json())
     .then(HSVL => {
-        norrebro(HSVL);
         renderActivities(HSVL);
         registrerInput(HSVL);
     });
@@ -24,7 +23,7 @@ fetch('https://hsvl.onrender.com/data')
 function renderActivities(HSVL){
     try{
         const activityUl = document.querySelector("ul.activityList");
-        activity.innerHTML = "";
+        activityUl.innerHTML = "";
         for (let i = 0; i < HSVL.length; i++) {
             const activity = HSVL[i].activity;
             const popularity = HSVL[i].popularity;
@@ -53,24 +52,27 @@ fetch('https://hsvl.onrender.com/mostPopulare')
     });
 
 function populareActivities(mostPopulare){
-    const ul = document.querySelector("ul.topPopulare");
-    for (let i = 0; i < mostPopulare.length; i++) {
-        const activity = mostPopulare[i].activity;
-        const popularity = mostPopulare[i].popularity;
-        const address = mostPopulare[i].location;
-        const city = mostPopulare[i].city;
-        const season = mostPopulare[i].season;
-        const li = document.createElement("li");
-        li.innerHTML = `
+    try {
+        const popularUl = document.querySelector("ul.topPopulare");
+        for (let i = 0; i < mostPopulare.length; i++) {
+            const activity = mostPopulare[i].activity;
+            const popularity = mostPopulare[i].popularity;
+            const address = mostPopulare[i].location;
+            const city = mostPopulare[i].city;
+            const season = mostPopulare[i].season;
+            const li = document.createElement("li");
+            li.innerHTML = `
             <h2>${activity}</h2>
             <p><span><p2>Popularitet:</p2></span> ${popularity}</p>  
             <p><span>Adresse:</span> ${address}</p> 
             <p><span>By:</span> ${city}</p>   
             <p><span>Årstid:</span> ${season}</p>   
                         `;
-        ul.appendChild(li);
+            popularUl.appendChild(li);
+        }
+    } catch (e) {
+        
     }
-
 }
 
 
@@ -94,28 +96,32 @@ function filterFunction() {
 }
 
 //NØRREBRO
+/*
 function norrebro(HSVL){
-    const norrebroUL = document.querySelector("ul#norrebroList");
-    console.log(norrebroUL)
-    for (let i = 0; i < HSVL.length; i++) {
-        const activity = HSVL[i].activity;
-        const popularity = HSVL[i].popularity;
-        const address = HSVL[i].location;
-        const city = HSVL[i].city;
-        const season = HSVL[i].season;
-        const li = document.createElement("li");
-        if (HSVL[i].city === "København N")
-        li.innerHTML = `
+    try {
+        const norrebroUL = document.querySelector("ul#norrebroList");
+        for (let i = 0; i < HSVL.length; i++) {
+            const activity = HSVL[i].activity;
+            const popularity = HSVL[i].popularity;
+            const address = HSVL[i].location;
+            const city = HSVL[i].city;
+            const season = HSVL[i].season;
+            const li = document.createElement("li");
+            if (HSVL[i].city === "København N")
+                li.innerHTML = `
             <h2>${activity}</h2>
             <p><span>Popularitet:</span> ${popularity}</p>  
             <p><span>Adresse:</span> ${address}</p> 
             <p><span>By:</span> ${city}</p>   
             <p><span>Årstid:</span> ${season}</p>   
                         `;
-        norrebroUL.appendChild(li);
+            norrebroUL.appendChild(li);
+        }
+    } catch (e) {
+        
     }
 }
-
+*/
 
 
 function registrerInput(activities){
