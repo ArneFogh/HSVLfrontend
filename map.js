@@ -1,4 +1,4 @@
-fetch('http://localhost:3000/locations')
+fetch('https://hsvl.onrender.com/locations')
     .then(response => response.json())
     .then(locationData =>{
         locationsOnMap(locationData);
