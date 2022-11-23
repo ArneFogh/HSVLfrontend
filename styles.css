@@ -320,6 +320,7 @@ color palette https://coolors.co/293132-474044-4f5165-547aa5-50d8d7
     width: 100%;
     border: 1px solid #ddd;
     z-index: 1;
+    opacity: 90%;
 }
 
 .dropdownContent a {
@@ -327,6 +328,11 @@ color palette https://coolors.co/293132-474044-4f5165-547aa5-50d8d7
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+}
+
+.dropdownContent a:hover{
+    font-weight: 500;
+    color: #252525;
 }
 
 .show {display:block;}
