@@ -316,4 +316,8 @@ color palette https://coolors.co/293132-474044-4f5165-547aa5-50d8d7
 
 .show {display:block;}
 
+#norrebroList li {
+    list-style: none;
+}
+
 

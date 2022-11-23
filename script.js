@@ -17,6 +17,7 @@ fetch('https://hsvl.onrender.com/data')
     .then(HSVL => {
         renderActivities(HSVL);
         registrerInput(HSVL);
+        norrebro(HSVL)
     });
 
 // Listen med activities, printet på html i en ul.
@@ -96,18 +97,20 @@ function filterFunction() {
 }
 
 //NØRREBRO
-/*
+
 function norrebro(HSVL){
     try {
         const norrebroUL = document.querySelector("ul#norrebroList");
+        console.log(norrebroUL)
         for (let i = 0; i < HSVL.length; i++) {
             const activity = HSVL[i].activity;
             const popularity = HSVL[i].popularity;
             const address = HSVL[i].location;
             const city = HSVL[i].city;
+            const city_id = HSVL[i].city_id;
             const season = HSVL[i].season;
             const li = document.createElement("li");
-            if (HSVL[i].city === "København N")
+            if (city_id === 1)
                 li.innerHTML = `
             <h2>${activity}</h2>
             <p><span>Popularitet:</span> ${popularity}</p>  
@@ -121,11 +124,11 @@ function norrebro(HSVL){
         
     }
 }
-*/
+
 
 
 function registrerInput(activities){
-    /*const btn = document.querySelector('button.filter'); */
+    //const btn = document.querySelector('button.filter');
     const inputElement = document.querySelector('input#userInput')
     inputElement.addEventListener('input', function (){
         const activityName = inputElement.value.toLowerCase()
@@ -140,6 +143,7 @@ function registrerInput(activities){
         renderActivities(filteredActivities)
     })
 }
+
 
 /*
 // lav inputs i html og button, alle med id. placeholder i inputs hvor der står, det der skal stå i feltet
