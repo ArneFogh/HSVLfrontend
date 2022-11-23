@@ -11,41 +11,6 @@ const navLinks = document.querySelectorAll("nav a").forEach(link => {
     link.classList.add("active");
 });
 
-// Fetch sender en request til det endpoint, hvor vores samlede data på aktiviteterne befinder sig.
-fetch('https://hsvl.onrender.com/data')
-    .then(response => response.json())
-    .then(HSVL => {
-        renderActivities(HSVL);
-        renderNorrebro(HSVL);
-        registrerInput(HSVL);
-    });
-
-// Listen med activities, printet på html i en ul.
-function renderActivities(HSVL){
-    try{
-        const activityUl = document.querySelector("ul.activityList");
-        activityUl.innerHTML = "";
-        for (let i = 0; i < HSVL.length; i++) {
-            const activity = HSVL[i].activity;
-            const popularity = HSVL[i].popularity;
-            const address = HSVL[i].location;
-            const city = HSVL[i].city;
-            const season = HSVL[i].season;
-            const li = document.createElement("li");
-            li.innerHTML = `
-            <h2>${activity}</h2>
-            <p><span>Popularitet:</span> ${popularity}</p>  
-            <p><span>Adresse:</span> ${address}</p> 
-            <p><span>By:</span> ${city}</p>   
-            <p><span>Årstid:</span> ${season}</p>   
-                        `;
-            activityUl.appendChild(li);
-        }
-    } catch (e) {
-
-    }
-}
-
 fetch('https://hsvl.onrender.com/mostPopulare')
     .then(response => response.json())
     .then(mostPopulare => {
@@ -96,13 +61,51 @@ function filterFunction() {
     }
 }
 
+// Fetch sender en request til det endpoint, hvor vores samlede data på aktiviteterne befinder sig.
+fetch('https://hsvl.onrender.com/data')
+    .then(response => response.json())
+    .then(HSVL => {
+        renderActivities(HSVL);
+        renderNorrebro(HSVL);
+        renderOsterbro(HSVL);
+        renderFrederiksberg(HSVL);
+        renderKbhk(HSVL);
+        renderNordhavn(HSVL);
+        renderKlampenborg(HSVL);
+        registrerInput(HSVL);
+    });
+
+// Listen med activities, printet på html i en ul.
+function renderActivities(HSVL){
+    try{
+        const activityUl = document.querySelector("ul.activityList");
+        activityUl.innerHTML = "";
+        for (let i = 0; i < HSVL.length; i++) {
+            const activity = HSVL[i].activity;
+            const popularity = HSVL[i].popularity;
+            const address = HSVL[i].location;
+            const city = HSVL[i].city;
+            const season = HSVL[i].season;
+            const li = document.createElement("li");
+            li.innerHTML = `
+            <h2>${activity}</h2>
+            <p><span>Popularitet:</span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${address}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p>   
+                        `;
+            activityUl.appendChild(li);
+        }
+    } catch (e) {
+
+    }
+}
 
 //NØRREBRO
 
 function renderNorrebro(HSVL){
     try {
         const norrebroUL = document.querySelector("ul#norrebroList");
-        console.log(norrebroUL)
         for (let i = 0; i < HSVL.length; i++) {
             const activity = HSVL[i].activity;
             const popularity = HSVL[i].popularity;
@@ -128,7 +131,179 @@ function renderNorrebro(HSVL){
     }
 }
 
+// Østerbro
 
+function renderOsterbro(HSVL){
+    try {
+        const osterbroUL = document.querySelector("ul#osterbroList");
+        for (let i = 0; i < HSVL.length; i++) {
+            const activity = HSVL[i].activity;
+            const popularity = HSVL[i].popularity;
+            const address = HSVL[i].location;
+            const city = HSVL[i].city;
+            const city_id = HSVL[i].city_id;
+            const season = HSVL[i].season;
+            const li = document.createElement("li");
+            if (city_id === 8){
+
+                li.innerHTML = `
+            <h2>${activity}</h2>
+            <p><span>Popularitet:</span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${address}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p>   
+                        `;
+                osterbroUL.appendChild(li);
+            }
+        }
+    } catch (e) {
+
+    }
+}
+
+// Frederiksberg
+
+function renderFrederiksberg(HSVL){
+    try {
+        const frederiksbergUl = document.querySelector("ul#frederiksbergList");
+        for (let i = 0; i < HSVL.length; i++) {
+            const activity = HSVL[i].activity;
+            const popularity = HSVL[i].popularity;
+            const address = HSVL[i].location;
+            const city = HSVL[i].city;
+            const city_id = HSVL[i].city_id;
+            const season = HSVL[i].season;
+            const li = document.createElement("li");
+            if (city_id === 3){
+
+                li.innerHTML = `
+            <h2>${activity}</h2>
+            <p><span>Popularitet:</span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${address}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p>   
+                        `;
+                frederiksbergUl.appendChild(li);
+            }
+        }
+    } catch (e) {
+
+    }
+}
+
+// København K
+
+function renderKbhk(HSVL){
+    try {
+        const kbhkgUl = document.querySelector("ul#kbhkList");
+        for (let i = 0; i < HSVL.length; i++) {
+            const activity = HSVL[i].activity;
+            const popularity = HSVL[i].popularity;
+            const address = HSVL[i].location;
+            const city = HSVL[i].city;
+            const city_id = HSVL[i].city_id;
+            const season = HSVL[i].season;
+            const li = document.createElement("li");
+            if (city_id === 11){
+
+                li.innerHTML = `
+            <h2>${activity}</h2>
+            <p><span>Popularitet:</span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${address}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p>   
+                        `;
+                kbhkgUl.appendChild(li);
+            }
+            if (city_id === 7){
+
+                li.innerHTML = `
+            <h2>${activity}</h2>
+            <p><span>Popularitet:</span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${address}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p>   
+                        `;
+                kbhkgUl.appendChild(li);
+            }
+            if (city_id === 4){
+
+                li.innerHTML = `
+            <h2>${activity}</h2>
+            <p><span>Popularitet:</span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${address}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p>   
+                        `;
+                kbhkgUl.appendChild(li);
+            }
+        }
+    } catch (e) {
+
+    }
+}
+
+// Nordhavn
+
+function renderNordhavn(HSVL){
+    try {
+        const nordhavnUl = document.querySelector("ul#nordhavnList");
+        for (let i = 0; i < HSVL.length; i++) {
+            const activity = HSVL[i].activity;
+            const popularity = HSVL[i].popularity;
+            const address = HSVL[i].location;
+            const city = HSVL[i].city;
+            const city_id = HSVL[i].city_id;
+            const season = HSVL[i].season;
+            const li = document.createElement("li");
+            if (city_id === 9){
+
+                li.innerHTML = `
+            <h2>${activity}</h2>
+            <p><span>Popularitet:</span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${address}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p>   
+                        `;
+                nordhavnUl.appendChild(li);
+            }
+        }
+    } catch (e) {
+
+    }
+}
+
+// Klampenborg
+
+function renderKlampenborg(HSVL){
+    try {
+        const klampenborgUl = document.querySelector("ul#klampenborgList");
+        for (let i = 0; i < HSVL.length; i++) {
+            const activity = HSVL[i].activity;
+            const popularity = HSVL[i].popularity;
+            const address = HSVL[i].location;
+            const city = HSVL[i].city;
+            const city_id = HSVL[i].city_id;
+            const season = HSVL[i].season;
+            const li = document.createElement("li");
+            if (city_id === 10){
+
+                li.innerHTML = `
+            <h2>${activity}</h2>
+            <p><span>Popularitet:</span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${address}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p>   
+                        `;
+                klampenborgUl.appendChild(li);
+            }
+        }
+    } catch (e) {
+
+    }
+}
+
+// Searchbar filter function
 
 function registrerInput(activities){
     //const btn = document.querySelector('button.filter');
@@ -137,9 +312,7 @@ function registrerInput(activities){
         const activityName = inputElement.value.toLowerCase()
         const filteredActivities = [];
         for (let i = 0; i < activities.length; i++) {
-            console.log(activities[i])
             if (activities[i].activity.toLowerCase().includes(activityName)){
-                console.log(activities[i].activity)
                 filteredActivities.push(activities[i])
             }
         }

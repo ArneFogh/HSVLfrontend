@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hvad skal vi lave</title>
+
+  <link
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+          integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+          crossorigin=""
+  />
+  <script
+          src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+          integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+          crossorigin=""
+  ></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,700;1,300;1,500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="nav-container">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="activities.html">Aktiviteter</a></li>
+        <li><a href="about.html">Om os</a></li>
+        <li><a href="account.html">Konto</a></li>
+        <li><a href="favourites.html">Favoritter</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="indexCover">
+    <img src="https://cityhearts.dk/wp-content/uploads/2019/08/WEKNOWAPLACE-2.jpg" alt="">
+    <div class="filterSearch">
+      <div class="filterSearchBar">
+        <button onclick="cityDropDown()" id="btnCityDrop">Vælg en by</button>
+        <div id="dropDownCity" class="dropdownContent">
+          <input type="text" id="dropInput" placeholder="Vælg en by eller bydel..." onkeyup="filterFunction()">
+          <a href="kbh_n.html">København N</a>
+          <a href="kbh_o.html">København Ø</a>
+          <a href="frederiksberg.html">Frederiksberg</a>
+          <a href="kbh_k.html">København K</a>
+          <a href="nordhavn.html">Nordhavn</a>
+          <a href="klampenborg.html">Klampenborg</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="index">
+  <div class="headline">
+    <h1>HVAD SKAL VI LAVE?</h1>
+  </div>
+  <div class="underline">
+    <hr>
+    <h2>De tre mest populære aktiviteter på Nordhavn</h2>
+    <hr>
+  </div>
+
+
+</section>
+
+<div class="topActivityInCity">
+  <ul id="nordhavnList"></ul>
+</div>
+
+<div class="mapBox">
+  <div id="map"></div>
+</div>
+
+<footer>
+  <hr>
+  <div class="copyRight">
+    &copy; 2022 HvadSkalViLave.dk
+  </div>
+</footer>
+<script src="script.js"></script>
+<script src="map.js"></script>
+</body>
+</html>
