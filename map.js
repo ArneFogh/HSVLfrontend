@@ -1,4 +1,4 @@
-fetch('https://hsvl.onrender.com/locations')
+fetch('https://hsvl.onrender.com/data')
     .then(response => response.json())
     .then(locationData =>{
         locationsOnMap(locationData);
@@ -15,7 +15,25 @@ function locationsOnMap(locationData){
     }).addTo(map);
 
     for (let i = 0; i < locationData.length; i++) {
-        L.marker([locationData[i].latitude, locationData[i].longitude]).addTo(map);
+        const activity = locationData[i].activity;
+        const popularity = locationData[i].popularity;
+        const address = locationData[i].location;
+        const city = locationData[i].city;
+        const season = locationData[i].season;
+        const locationNumber = locationData[i].location_id;
+
+        L.marker([locationData[i].latitude, locationData[i].longitude]).addTo(map).bindPopup(`<h2>${activity}</h2>
+        <hr>
+            <p><span>Popularitet:</span> ${popularity}</p>
+            <p><span>Adresse:</span> ${address}</p>
+            <p><span>By:</span> ${city}</p>
+            <p><span>Årstid:</span> ${season}</p>`);
+
     }
+    mymarker = L.marker;
+
+    map.addLayer(mymarker);
+    mymarker.bindPopup('<p>You are here ' + username + '</p>').openPopup();
+
 }
 
