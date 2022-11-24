@@ -61,16 +61,16 @@ footer{
     margin: auto;
 }
 
-.activityList p{
+.activityList p, .mapBox p{
     font-weight: 500;
 }
 
-.activityList h2{
+.activityList h2, .mapBox h2 {
     font-size: 22px;
     font-weight: 700;
 }
 
-.activityList span{
+.activityList span, .mapBox span {
     font-weight: 700;
 }
 
