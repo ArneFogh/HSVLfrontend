@@ -72,10 +72,21 @@ fetch('https://hsvl.onrender.com/data')
         renderKbhk(HSVL);
         renderNordhavn(HSVL);
         renderKlampenborg(HSVL);
-       /*registrerInput(HSVL);
-
-        */
+        registrerInput(HSVL);
     });
+/*
+fetch('https://hsvl.onrender.com/mostPopularActivities')
+    .then(response => response.json())
+    .then(HSVL => {
+        mostPopularActivities(HSVL);
+    });
+
+fetch('https://hsvl.onrender.com/leastPopularActivities')
+    .then(response => response.json())
+    .then(HSVL => {
+        leastPopularActivities(HSVL);
+    });
+*/
 
 // Listen med activities, printet på html i en ul.
 function renderActivities(HSVL){
@@ -310,7 +321,7 @@ function renderKlampenborg(HSVL){
 }
 
 // Searchbar filter function
-/*
+
 function registrerInput(activities){
     //const btn = document.querySelector('button.filter');
     const inputElement = document.querySelector('input#userInput')
@@ -328,11 +339,16 @@ function registrerInput(activities){
         renderActivities(filteredActivities)
     })
 }
+/*
+function mostPopularActivities(HSVL) {
 
- */
+};
 
+function leastPopularActivities(HSVL) {
 
+};
 
+*/
 
 
 // lav inputs i html og button, alle med id. placeholder i inputs hvor der står, det der skal stå i feltet
@@ -340,66 +356,17 @@ function registrerInput(activities){
 //LOG DEM UD
 // få fat i knappen på samme måde
 
-/*
 
-const exitNewAccountPage = document.querySelector('.exitNewAccountPage');
-const createAccountBtn = document.querySelector('.createNewAccount');
-const newAccountPage = document.querySelector('.newAccountPage');
-const newAccountPageBtn = document.querySelector('.getStartedBtn');
+const buttonName = document.querySelector('.getStartedBtn')
+buttonName.addEventListener('click', createNewActivity());
 
-newAccountPageBtn.addEventListener('click', function (){
-    console.log("button clicked")
-    newAccountPage.classList.add("showNewAccountPage");
-})
-
-exitNewAccountPage.addEventListener('click', function (){
-    console.log("exit the page")
-    newAccountPage.classList.remove("showNewAccountPage")
-})
-
-const newUserNameInput = document.querySelector('.newUserName')
-const newEmailInput = document.querySelector('.newEmail')
-
-createAccountBtn.addEventListener('click', function (){
-    console.log("clicked create new account btn")
-    const newUserName = newUserNameInput.value
-    const newEmail = newEmailInput.value
-    console.log(newUserName)
-    console.log(newEmail)
-
-    function createNewUser(newUser){
-        const post ={
-            newUserName: newUser.target.createUserName.value,
-            newEmail: newUser.target.createNewEmail.value
-        }
-
-        fetch("https://hsvl.onrender.com/users",{
-            method: "POST",
-            body: JSON.stringify(post),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-    }
-
-
-
- */
-
-
-
-})
-/*
-newAccount.addEventListener('click', function (){
+function createNewActivity() {
     const text = textInput.value
     const text2 = text2input.value
     const text3 = text3input.value
 
-})
 
- */
-
-
+}
 
 // lav en const med keys af det der skal ind. body: JSON.stringify(*navn på const med keys*)
 
