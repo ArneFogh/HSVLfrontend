@@ -11,7 +11,7 @@ const navLinks = document.querySelectorAll("nav a").forEach(link => {
     link.classList.add("active");
 });
 
-fetch('https://hsvl.onrender.com/mostPopulare')
+fetch('https://hsvl.onrender.com/mostPopular')
     .then(response => response.json())
     .then(mostPopulare => {
         populareActivities(mostPopulare);
@@ -330,12 +330,14 @@ function registrerInput(activities){
 
 
 
-/*
+
 // lav inputs i html og button, alle med id. placeholder i inputs hvor der står, det der skal stå i feltet
 // få fat i dine input fields med doc.querySelector og giv dem en variabel
 //LOG DEM UD
 // få fat i knappen på samme måde
-const buttonName = document.querySelector()
+
+
+const buttonName = document.querySelector('.getStartedBtn')
 buttonName.addEventListener('click', createNewActivity());
 
 function createNewActivity() {
@@ -348,4 +350,4 @@ function createNewActivity() {
 
 // lav en const med keys af det der skal ind. body: JSON.stringify(*navn på const med keys*)
 
- */
+
