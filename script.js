@@ -74,6 +74,19 @@ fetch('https://hsvl.onrender.com/data')
         renderKlampenborg(HSVL);
         registrerInput(HSVL);
     });
+/*
+fetch('https://hsvl.onrender.com/mostPopularActivities')
+    .then(response => response.json())
+    .then(HSVL => {
+        mostPopularActivities(HSVL);
+    });
+
+fetch('https://hsvl.onrender.com/leastPopularActivities')
+    .then(response => response.json())
+    .then(HSVL => {
+        leastPopularActivities(HSVL);
+    });
+*/
 
 // Listen med activities, printet på html i en ul.
 function renderActivities(HSVL){
@@ -326,9 +339,16 @@ function registrerInput(activities){
         renderActivities(filteredActivities)
     })
 }
+/*
+function mostPopularActivities(HSVL) {
 
+};
 
+function leastPopularActivities(HSVL) {
 
+};
+
+*/
 
 
 // lav inputs i html og button, alle med id. placeholder i inputs hvor der står, det der skal stå i feltet
