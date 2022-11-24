@@ -95,6 +95,7 @@ function renderActivities(HSVL){
             <p><span>Adresse:</span> ${address}</p> 
             <p><span>By:</span> ${city}</p>   
             <p><span>Årstid:</span> ${season}</p> 
+            <hr>
             <p><span>Nummer:</span> ${locationNumber}</p>  
                         `;
             activityUl.appendChild(li);
