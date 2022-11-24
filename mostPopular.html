@@ -35,22 +35,22 @@
     </div>
 </header>
 <section class="activities">
-<div class="activityData">
-    <div class="headline">
-        <h1>Aktiviteter</h1>
+    <div class="activityData">
+        <div class="headline">
+            <h1>Aktiviteter</h1>
+        </div>
+        <button onclick="sortDropDown()" id="sortBtn">Sorter efter...</button>
+        <div id="dropDownSort" class="sortContent">
+            <input type="text" id="sortInput" placeholder="Sorter efter..." onkeyup="sortFunction()">
+            <a href="mostPopular.html">Mest populær</a>
+            <a href="leastPopular.html">Mindst populær</a>
+            <a href="spring.html">Forår</a>
+            <a href="summer.html">Sommer</a>
+            <a href="fall.html">Efterår</a>
+            <a href="winter.html">Vinter</a>
+        </div>
+        <ul class="mostPopList"></ul>
     </div>
-    <button onclick="sortDropDown()" id="sortBtn">Sorter efter...</button>
-    <div id="dropDownSort" class="sortContent">
-        <input type="text" id="sortInput" placeholder="Sorter efter..." onkeyup="sortFunction()">
-        <a href="mostPopular.html">Mest populær</a>
-        <a href="leastPopular.html">Mindst populær</a>
-        <a href="spring.html">Forår</a>
-        <a href="summer.html">Sommer</a>
-        <a href="fall.html">Efterår</a>
-        <a href="winter.html">Vinter</a>
-    </div>
-    <ul class="activityList"></ul>
-</div>
 </section>
 <footer>
     &copy; 2022 HvadSkalViLave.dk

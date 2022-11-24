@@ -74,7 +74,7 @@ fetch('https://hsvl.onrender.com/data')
         renderKlampenborg(HSVL);
         registrerInput(HSVL);
     });
-/*
+
 fetch('https://hsvl.onrender.com/mostPopularActivities')
     .then(response => response.json())
     .then(HSVL => {
@@ -86,7 +86,8 @@ fetch('https://hsvl.onrender.com/leastPopularActivities')
     .then(HSVL => {
         leastPopularActivities(HSVL);
     });
-*/
+
+
 
 // Listen med activities, printet på html i en ul.
 function renderActivities(HSVL){
@@ -119,236 +120,225 @@ function renderActivities(HSVL){
 }
 
 //NØRREBRO
+        function renderNorrebro(HSVL) {
+            try {
+                const norrebroUL = document.querySelector("ul#norrebroList");
+                for (let i = 0; i < HSVL.length; i++) {
+                    const activity = HSVL[i].activity;
+                    const popularity = HSVL[i].popularity;
+                    const address = HSVL[i].location;
+                    const city = HSVL[i].city;
+                    const city_id = HSVL[i].city_id;
+                    const season = HSVL[i].season;
+                    const li = document.createElement("li");
+                    if (city_id === 1) {
 
-function renderNorrebro(HSVL){
-    try {
-        const norrebroUL = document.querySelector("ul#norrebroList");
-        for (let i = 0; i < HSVL.length; i++) {
-            const activity = HSVL[i].activity;
-            const popularity = HSVL[i].popularity;
-            const address = HSVL[i].location;
-            const city = HSVL[i].city;
-            const city_id = HSVL[i].city_id;
-            const season = HSVL[i].season;
-            const li = document.createElement("li");
-            if (city_id === 1){
-
-                li.innerHTML = `
+                        li.innerHTML = `
             <h2>${activity}</h2>
             <p><span>Popularitet:</span> ${popularity}</p>  
             <p><span>Adresse:</span> ${address}</p> 
             <p><span>By:</span> ${city}</p>   
             <p><span>Årstid:</span> ${season}</p>   
                         `;
-            norrebroUL.appendChild(li);
+                        norrebroUL.appendChild(li);
+                    }
+                }
+            } catch (e) {
+
             }
         }
-    } catch (e) {
-        
-    }
-}
 
 // Østerbro
 
-function renderOsterbro(HSVL){
-    try {
-        const osterbroUL = document.querySelector("ul#osterbroList");
-        for (let i = 0; i < HSVL.length; i++) {
-            const activity = HSVL[i].activity;
-            const popularity = HSVL[i].popularity;
-            const address = HSVL[i].location;
-            const city = HSVL[i].city;
-            const city_id = HSVL[i].city_id;
-            const season = HSVL[i].season;
-            const li = document.createElement("li");
-            if (city_id === 8){
+        function renderOsterbro(HSVL) {
+            try {
+                const osterbroUL = document.querySelector("ul#osterbroList");
+                for (let i = 0; i < HSVL.length; i++) {
+                    const activity = HSVL[i].activity;
+                    const popularity = HSVL[i].popularity;
+                    const address = HSVL[i].location;
+                    const city = HSVL[i].city;
+                    const city_id = HSVL[i].city_id;
+                    const season = HSVL[i].season;
+                    const li = document.createElement("li");
+                    if (city_id === 8) {
 
-                li.innerHTML = `
+                        li.innerHTML = `
             <h2>${activity}</h2>
             <p><span>Popularitet:</span> ${popularity}</p>  
             <p><span>Adresse:</span> ${address}</p> 
             <p><span>By:</span> ${city}</p>   
             <p><span>Årstid:</span> ${season}</p>   
                         `;
-                osterbroUL.appendChild(li);
+                        osterbroUL.appendChild(li);
+                    }
+                }
+            } catch (e) {
+
             }
         }
-    } catch (e) {
-
-    }
-}
 
 // Frederiksberg
 
-function renderFrederiksberg(HSVL){
-    try {
-        const frederiksbergUl = document.querySelector("ul#frederiksbergList");
-        for (let i = 0; i < HSVL.length; i++) {
-            const activity = HSVL[i].activity;
-            const popularity = HSVL[i].popularity;
-            const address = HSVL[i].location;
-            const city = HSVL[i].city;
-            const city_id = HSVL[i].city_id;
-            const season = HSVL[i].season;
-            const li = document.createElement("li");
-            if (city_id === 3){
+        function renderFrederiksberg(HSVL) {
+            try {
+                const frederiksbergUl = document.querySelector("ul#frederiksbergList");
+                for (let i = 0; i < HSVL.length; i++) {
+                    const activity = HSVL[i].activity;
+                    const popularity = HSVL[i].popularity;
+                    const address = HSVL[i].location;
+                    const city = HSVL[i].city;
+                    const city_id = HSVL[i].city_id;
+                    const season = HSVL[i].season;
+                    const li = document.createElement("li");
+                    if (city_id === 3) {
 
-                li.innerHTML = `
+                        li.innerHTML = `
             <h2>${activity}</h2>
             <p><span>Popularitet:</span> ${popularity}</p>  
             <p><span>Adresse:</span> ${address}</p> 
             <p><span>By:</span> ${city}</p>   
             <p><span>Årstid:</span> ${season}</p>   
                         `;
-                frederiksbergUl.appendChild(li);
+                        frederiksbergUl.appendChild(li);
+                    }
+                }
+            } catch (e) {
+
             }
         }
-    } catch (e) {
-
-    }
-}
 
 // København K
 
-function renderKbhk(HSVL){
-    try {
-        const kbhkgUl = document.querySelector("ul#kbhkList");
-        for (let i = 0; i < HSVL.length; i++) {
-            const activity = HSVL[i].activity;
-            const popularity = HSVL[i].popularity;
-            const address = HSVL[i].location;
-            const city = HSVL[i].city;
-            const city_id = HSVL[i].city_id;
-            const season = HSVL[i].season;
-            const li = document.createElement("li");
-            if (city_id === 11){
+        function renderKbhk(HSVL) {
+            try {
+                const kbhkgUl = document.querySelector("ul#kbhkList");
+                for (let i = 0; i < HSVL.length; i++) {
+                    const activity = HSVL[i].activity;
+                    const popularity = HSVL[i].popularity;
+                    const address = HSVL[i].location;
+                    const city = HSVL[i].city;
+                    const city_id = HSVL[i].city_id;
+                    const season = HSVL[i].season;
+                    const li = document.createElement("li");
+                    if (city_id === 11) {
 
-                li.innerHTML = `
+                        li.innerHTML = `
             <h2>${activity}</h2>
             <p><span>Popularitet:</span> ${popularity}</p>  
             <p><span>Adresse:</span> ${address}</p> 
             <p><span>By:</span> ${city}</p>   
             <p><span>Årstid:</span> ${season}</p>   
                         `;
-                kbhkgUl.appendChild(li);
-            }
-            if (city_id === 7){
+                        kbhkgUl.appendChild(li);
+                    }
+                    if (city_id === 7) {
 
-                li.innerHTML = `
+                        li.innerHTML = `
             <h2>${activity}</h2>
             <p><span>Popularitet:</span> ${popularity}</p>  
             <p><span>Adresse:</span> ${address}</p> 
             <p><span>By:</span> ${city}</p>   
             <p><span>Årstid:</span> ${season}</p>   
                         `;
-                kbhkgUl.appendChild(li);
-            }
-            if (city_id === 4){
+                        kbhkgUl.appendChild(li);
+                    }
+                    if (city_id === 4) {
 
-                li.innerHTML = `
+                        li.innerHTML = `
             <h2>${activity}</h2>
             <p><span>Popularitet:</span> ${popularity}</p>  
             <p><span>Adresse:</span> ${address}</p> 
             <p><span>By:</span> ${city}</p>   
             <p><span>Årstid:</span> ${season}</p>   
                         `;
-                kbhkgUl.appendChild(li);
+                        kbhkgUl.appendChild(li);
+                    }
+                }
+            } catch (e) {
+
             }
         }
-    } catch (e) {
-
-    }
-}
 
 // Nordhavn
 
-function renderNordhavn(HSVL){
-    try {
-        const nordhavnUl = document.querySelector("ul#nordhavnList");
-        for (let i = 0; i < HSVL.length; i++) {
-            const activity = HSVL[i].activity;
-            const popularity = HSVL[i].popularity;
-            const address = HSVL[i].location;
-            const city = HSVL[i].city;
-            const city_id = HSVL[i].city_id;
-            const season = HSVL[i].season;
-            const li = document.createElement("li");
-            if (city_id === 9){
+        function renderNordhavn(HSVL) {
+            try {
+                const nordhavnUl = document.querySelector("ul#nordhavnList");
+                for (let i = 0; i < HSVL.length; i++) {
+                    const activity = HSVL[i].activity;
+                    const popularity = HSVL[i].popularity;
+                    const address = HSVL[i].location;
+                    const city = HSVL[i].city;
+                    const city_id = HSVL[i].city_id;
+                    const season = HSVL[i].season;
+                    const li = document.createElement("li");
+                    if (city_id === 9) {
 
-                li.innerHTML = `
+                        li.innerHTML = `
             <h2>${activity}</h2>
             <p><span>Popularitet:</span> ${popularity}</p>  
             <p><span>Adresse:</span> ${address}</p> 
             <p><span>By:</span> ${city}</p>   
             <p><span>Årstid:</span> ${season}</p>   
                         `;
-                nordhavnUl.appendChild(li);
+                        nordhavnUl.appendChild(li);
+                    }
+                }
+            } catch (e) {
+
             }
         }
-    } catch (e) {
-
-    }
-}
 
 // Klampenborg
 
-function renderKlampenborg(HSVL){
-    try {
-        const klampenborgUl = document.querySelector("ul#klampenborgList");
-        for (let i = 0; i < HSVL.length; i++) {
-            const activity = HSVL[i].activity;
-            const popularity = HSVL[i].popularity;
-            const address = HSVL[i].location;
-            const city = HSVL[i].city;
-            const city_id = HSVL[i].city_id;
-            const season = HSVL[i].season;
-            const li = document.createElement("li");
-            if (city_id === 10){
+        function renderKlampenborg(HSVL) {
+            try {
+                const klampenborgUl = document.querySelector("ul#klampenborgList");
+                for (let i = 0; i < HSVL.length; i++) {
+                    const activity = HSVL[i].activity;
+                    const popularity = HSVL[i].popularity;
+                    const address = HSVL[i].location;
+                    const city = HSVL[i].city;
+                    const city_id = HSVL[i].city_id;
+                    const season = HSVL[i].season;
+                    const li = document.createElement("li");
+                    if (city_id === 10) {
 
-                li.innerHTML = `
+                        li.innerHTML = `
             <h2>${activity}</h2>
             <p><span>Popularitet:</span> ${popularity}</p>  
             <p><span>Adresse:</span> ${address}</p> 
             <p><span>By:</span> ${city}</p>   
             <p><span>Årstid:</span> ${season}</p>   
                         `;
-                klampenborgUl.appendChild(li);
+                        klampenborgUl.appendChild(li);
+                    }
+                }
+            } catch (e) {
+
             }
         }
-    } catch (e) {
-
-    }
-}
 
 // Searchbar filter function
 
-function registrerInput(activities){
-    //const btn = document.querySelector('button.filter');
+function registrerInput(activities) {
+    const btn = document.querySelector('button.filter');
     const inputElement = document.querySelector('input#userInput')
-    inputElement.addEventListener('input', function (){
+    inputElement.addEventListener('input', function () {
         const activityName = inputElement.value.toLowerCase()
         const filteredActivities = [];
         for (let i = 0; i < activities.length; i++) {
-            if (activities[i].activity.toLowerCase().includes(activityName)){
+            if (activities[i].activity.toLowerCase().includes(activityName)) {
                 filteredActivities.push(activities[i])
             }
-            if (activities[i].city.toLowerCase().includes(activityName)){
+            if (activities[i].city.toLowerCase().includes(activityName)) {
                 filteredActivities.push(activities[i])
             }
         }
         renderActivities(filteredActivities)
     })
 }
-/*
-function mostPopularActivities(HSVL) {
-
-};
-
-function leastPopularActivities(HSVL) {
-
-};
-
-*/
 
 
 // lav inputs i html og button, alle med id. placeholder i inputs hvor der står, det der skal stå i feltet
@@ -356,18 +346,239 @@ function leastPopularActivities(HSVL) {
 //LOG DEM UD
 // få fat i knappen på samme måde
 
+/*
+        const buttonName = document.querySelector('.getStartedBtn')
+        buttonName.addEventListener('click', createNewActivity());
 
-const buttonName = document.querySelector('.getStartedBtn')
-buttonName.addEventListener('click', createNewActivity());
+        function createNewActivity() {
+            const text = textInput.value
+            const text2 = text2input.value
+            const text3 = text3input.value
 
-function createNewActivity() {
-    const text = textInput.value
-    const text2 = text2input.value
-    const text3 = text3input.value
+        }
+*/
 
-
+function sortDropDown() {
+    document.getElementById("dropDownSort").classList.toggle("show");
 }
 
-// lav en const med keys af det der skal ind. body: JSON.stringify(*navn på const med keys*)
+function sortFunction() {
+    const input = document.querySelector("#sortInput");
+    const filter = input.value.toUpperCase();
+    const dropDiv = document.querySelector("#dropDownSort");
+    const dropFilters = dropDiv.getElementsByTagName("a");
+    for (let i = 0; i < dropCities.length; i++) {
+        inputValue = dropFilters[i].textContent || dropFilters[i].innerText;
+        if (inputValue.toUpperCase().indexOf(filter) > -1) {
+            dropFilters[i].style.display = "";
+        } else {
+            dropFilters[i].style.display = "none"
+        }
+    }
+}
 
+
+function mostPopularActivities(HSVL) {
+    try {
+            const activityUl = document.querySelector("ul.mostPopList");
+            activityUl.innerHTML = "";
+            for (let i = 0; i < HSVL.length; i++) {
+                const activity = HSVL[i].activity;
+                const popularity = HSVL[i].popularity;
+                const address = HSVL[i].location;
+                const city = HSVL[i].city;
+                const season = HSVL[i].season;
+                const locationNumber = HSVL[i].location_id;
+                const li = document.createElement("li");
+                li.innerHTML = `
+            <h2>${activity}</h2>
+            <hr>
+            <p><span>Popularitet:</span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${address}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p> 
+            <hr>
+            <p><span>Nummer:</span> ${locationNumber}</p>  
+                        `;
+                activityUl.appendChild(li);
+            }
+        }
+        catch (e) {
+
+    }
+}
+
+function leastPopularActivities(HSVL) {
+    try {
+        const activityUl = document.querySelector("ul.leastPopList");
+        activityUl.innerHTML = "";
+        for (let i = 0; i < HSVL.length; i++) {
+            const activity = HSVL[i].activity;
+            const popularity = HSVL[i].popularity;
+            const address = HSVL[i].location;
+            const city = HSVL[i].city;
+            const season = HSVL[i].season;
+            const locationNumber = HSVL[i].location_id;
+            const li = document.createElement("li");
+            li.innerHTML = `
+            <h2>${activity}</h2>
+            <hr>
+            <p><span>Popularitet:</span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${address}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p> 
+            <hr>
+            <p><span>Nummer:</span> ${locationNumber}</p>  
+                        `;
+            activityUl.appendChild(li);
+        }
+    }
+    catch (e) {
+
+    }
+}
+
+fetch('https://hsvl.onrender.com/spring')
+    .then(response => response.json())
+    .then(HSVL => {
+        springList(HSVL);
+    });
+
+function springList(HSVL) {
+    try {
+        const activityUl = document.querySelector("ul.springList");
+        activityUl.innerHTML = "";
+        for (let i = 0; i < HSVL.length; i++) {
+            const activity = HSVL[i].activity;
+            const popularity = HSVL[i].popularity;
+            const address = HSVL[i].location;
+            const city = HSVL[i].city;
+            const season = HSVL[i].season;
+            const locationNumber = HSVL[i].location_id;
+            const li = document.createElement("li");
+            li.innerHTML = `
+            <h2>${activity}</h2>
+            <hr>
+            <p><span>Popularitet:</span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${address}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p> 
+            <hr>
+            <p><span>Nummer:</span> ${locationNumber}</p>  
+                        `;
+            activityUl.appendChild(li);
+        }
+    }
+    catch (e) {
+
+    }
+}
+
+fetch('https://hsvl.onrender.com/summer')
+    .then(response => response.json())
+    .then(HSVL => {
+        summerList(HSVL);
+    });
+
+function summerList(HSVL) {
+    try {
+        const activityUl = document.querySelector("ul.summerList");
+        activityUl.innerHTML = "";
+        for (let i = 0; i < HSVL.length; i++) {
+            const activity = HSVL[i].activity;
+            const popularity = HSVL[i].popularity;
+            const address = HSVL[i].location;
+            const city = HSVL[i].city;
+            const season = HSVL[i].season;
+            const locationNumber = HSVL[i].location_id;
+            const li = document.createElement("li");
+            li.innerHTML = `
+            <h2>${activity}</h2>
+            <hr>
+            <p><span>Popularitet:</span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${address}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p> 
+            <hr>
+            <p><span>Nummer:</span> ${locationNumber}</p>  
+                        `;
+            activityUl.appendChild(li);
+        }
+    }
+    catch (e) {
+
+    }
+}
+
+fetch('https://hsvl.onrender.com/fall')
+    .then(response => response.json())
+    .then(HSVL => {
+        fallList(HSVL);
+    });
+
+function fallList(HSVL) {
+    try {
+        const activityUl = document.querySelector("ul.fallList");
+        activityUl.innerHTML = "";
+        for (let i = 0; i < HSVL.length; i++) {
+            const activity = HSVL[i].activity;
+            const popularity = HSVL[i].popularity;
+            const address = HSVL[i].location;
+            const city = HSVL[i].city;
+            const season = HSVL[i].season;
+            const locationNumber = HSVL[i].location_id;
+            const li = document.createElement("li");
+            li.innerHTML = `
+            <h2>${activity}</h2>
+            <hr>
+            <p><span>Popularitet:</span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${address}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p> 
+            <hr>
+            <p><span>Nummer:</span> ${locationNumber}</p>  
+                        `;
+            activityUl.appendChild(li);
+        }
+    }
+    catch (e) {
+
+    }
+}
+
+fetch('https://hsvl.onrender.com/summer')
+    .then(response => response.json())
+    .then(HSVL => {
+        winterList(HSVL);
+    });
+
+function winterList(HSVL) {
+    try {
+        const activityUl = document.querySelector("ul.winterList");
+        activityUl.innerHTML = "";
+        for (let i = 0; i < HSVL.length; i++) {
+            const activity = HSVL[i].activity;
+            const popularity = HSVL[i].popularity;
+            const address = HSVL[i].location;
+            const city = HSVL[i].city;
+            const season = HSVL[i].season;
+            const locationNumber = HSVL[i].location_id;
+            const li = document.createElement("li");
+            li.innerHTML = `
+            <h2>${activity}</h2>
+            <hr>
+            <p><span>Popularitet:</span> ${popularity}</p>  
+            <p><span>Adresse:</span> ${address}</p> 
+            <p><span>By:</span> ${city}</p>   
+            <p><span>Årstid:</span> ${season}</p> 
+            <hr>
+            <p><span>Nummer:</span> ${locationNumber}</p>  
+                        `;
+            activityUl.appendChild(li);
+        }
+    }
+    catch (e) {
+
+    }
+}
 
