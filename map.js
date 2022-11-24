@@ -20,7 +20,6 @@ function locationsOnMap(locationData){
         const address = locationData[i].location;
         const city = locationData[i].city;
         const season = locationData[i].season;
-        const locationNumber = locationData[i].location_id;
 
         L.marker([locationData[i].latitude, locationData[i].longitude]).addTo(map).bindPopup(`<h2>${activity}</h2>
         <hr>
