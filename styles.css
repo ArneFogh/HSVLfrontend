@@ -421,11 +421,13 @@ color palette https://coolors.co/293132-474044-4f5165-547aa5-50d8d7
 /* DROPDOWN SORT */
 
 #sortBtn {
+    display: flex;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
     width: 30%;
+    margin-left: 33%;
 }
 
 #sortBtn:hover, #sortBtn:focus {
@@ -456,3 +458,6 @@ color palette https://coolors.co/293132-474044-4f5165-547aa5-50d8d7
 
 .show {display:block;}
 
+footer {
+    margin-top: 600px;
+}

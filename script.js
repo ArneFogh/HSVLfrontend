@@ -14,12 +14,12 @@ const navLinks = document.querySelectorAll("nav a").forEach(link => {
 fetch('https://hsvl.onrender.com/mostPopular')
     .then(response => response.json())
     .then(mostPopulare => {
-        populareActivities(mostPopulare);
+        popularActivities(mostPopulare);
     });
 
-function populareActivities(mostPopulare){
+function popularActivities(mostPopulare){
     try {
-        const popularUl = document.querySelector("ul.topPopulare");
+        const popularUl = document.querySelector("ul.topPopular");
         for (let i = 0; i < mostPopulare.length; i++) {
             const activity = mostPopulare[i].activity;
             const popularity = mostPopulare[i].popularity;
@@ -46,6 +46,7 @@ function cityDropDown() {
     document.getElementById("dropDownCity").classList.toggle("show");
 }
 
+// Første dropdown filter
 function filterFunction() {
     const input = document.querySelector("#dropInput");
     const filter = input.value.toUpperCase();
@@ -75,17 +76,7 @@ fetch('https://hsvl.onrender.com/data')
         registrerInput(HSVL);
     });
 
-fetch('https://hsvl.onrender.com/mostPopularActivities')
-    .then(response => response.json())
-    .then(HSVL => {
-        mostPopularActivities(HSVL);
-    });
 
-fetch('https://hsvl.onrender.com/leastPopularActivities')
-    .then(response => response.json())
-    .then(HSVL => {
-        leastPopularActivities(HSVL);
-    });
 
 
 
@@ -341,23 +332,7 @@ function registrerInput(activities) {
 }
 
 
-// lav inputs i html og button, alle med id. placeholder i inputs hvor der står, det der skal stå i feltet
-// få fat i dine input fields med doc.querySelector og giv dem en variabel
-//LOG DEM UD
-// få fat i knappen på samme måde
-
-/*
-        const buttonName = document.querySelector('.getStartedBtn')
-        buttonName.addEventListener('click', createNewActivity());
-
-        function createNewActivity() {
-            const text = textInput.value
-            const text2 = text2input.value
-            const text3 = text3input.value
-
-        }
-*/
-
+// Dropdown til at sortere
 function sortDropDown() {
     document.getElementById("dropDownSort").classList.toggle("show");
 }
@@ -376,6 +351,14 @@ function sortFunction() {
         }
     }
 }
+
+
+
+fetch('https://hsvl.onrender.com/mostPopularActivities')
+    .then(response => response.json())
+    .then(HSVL => {
+        mostPopularActivities(HSVL);
+    });
 
 
 function mostPopularActivities(HSVL) {
@@ -407,6 +390,13 @@ function mostPopularActivities(HSVL) {
 
     }
 }
+
+
+fetch('https://hsvl.onrender.com/leastPopularActivities')
+    .then(response => response.json())
+    .then(HSVL => {
+        leastPopularActivities(HSVL);
+    });
 
 function leastPopularActivities(HSVL) {
     try {
