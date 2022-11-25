@@ -425,7 +425,7 @@ color palette https://coolors.co/293132-474044-4f5165-547aa5-50d8d7
     font-size: 16px;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 30%;
 }
 
 #sortBtn:hover, #sortBtn:focus {
