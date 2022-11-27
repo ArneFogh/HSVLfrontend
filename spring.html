@@ -37,17 +37,22 @@
 <section class="activities">
     <div class="activityData">
         <div class="headline">
-            <h1 id="activities">Aktiviteter</h1>
+            <h1 id="activities">Aktiviteter i foråret</h1>
         </div>
-        <button onclick="sortDropDown()" id="sortBtn">Sorter efter...</button>
-        <div id="dropDownSort" class="sortContent">
-            <input type="text" id="sortInput" placeholder="Sorter efter..." onkeyup="sortFunction()">
-            <a href="mostPopular.html#activities">Mest populær</a>
-            <a href="leastPopular.html#activities">Mindst populær</a>
-            <a href="spring.html#activities">Forår</a>
-            <a href="summer.html#activities">Sommer</a>
-            <a href="fall.html#activities">Efterår</a>
-            <a href="winter.html#activities">Vinter</a>
+        <div class="sortButtonContainer">
+            <div class="sortButton">
+                <button onclick="sortDropDown()" id="sortBtn">Sorter efter...</button>
+            </div>
+        </div>
+        <div class="sortContentContainer">
+            <div id="dropDownSort" class="sortContent">
+                <a href="mostPopular.html#activities">Mest populær</a>
+                <a href="leastPopular.html#activities">Mindst populær</a>
+                <a href="spring.html#activities">Forår</a>
+                <a href="summer.html#activities">Sommer</a>
+                <a href="fall.html#activities">Efterår</a>
+                <a href="winter.html#activities">Vinter</a>
+            </div>
         </div>
         <ul class="springList"></ul>
     </div>

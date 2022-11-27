@@ -42,7 +42,7 @@ footer{
     margin-top: 70px;
 }
 
-.activityList li{
+.activityList li, .fallList li, .leastPopList li, .mostPopList li, .springList li, .summerList li, .winterList li{
     list-style-type: none;
     border: 1px solid #547AA5;
     margin: 30px;
@@ -51,26 +51,26 @@ footer{
     background-color: #C7D0D1;
 }
 
-.activityList li:hover{
+.activityList li:hover, .fallList li:hover, .leastPopList li:hover, .mostPopList li:hover, .springList li:hover, .summerList li:hover, .winterList li:hover{
     background-color: #9AABAC;
 }
 
-.activityList{
+.activityList, .fallList, .leastPopList, .mostPopList, .springList, .summerList, .winterList{
     padding: 0;
     width: 70%;
     margin: auto;
 }
 
-.activityList p, .mapBox p{
+.activityList p, .mapBox p, .fallList p, .leastPopList p, .mostPopList p, .springList p, .summerList p, .winterList p{
     font-weight: 500;
 }
 
-.activityList h2, .mapBox h2 {
+.activityList h2, .mapBox h2, .fallList h2, .leastPopList h2, .mostPopList h2, .springList h2, .summerList h2, .winterList h2 {
     font-size: 22px;
     font-weight: 700;
 }
 
-.activityList span, .mapBox span {
+.activityList span, .mapBox span, .fallList span, .leastPopList span, .mostPopList span, .springList span, .summerList span, .winterList span {
     font-weight: 700;
 }
 
@@ -420,25 +420,33 @@ color palette https://coolors.co/293132-474044-4f5165-547aa5-50d8d7
 
 /* DROPDOWN SORT */
 
+.sortButtonContainer{
+    width: 300px;
+    margin: auto;
+}
+
 #sortBtn {
-    display: flex;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    width: 30%;
-    margin-left: 33%;
+    width: 100%;
 }
 
 #sortBtn:hover, #sortBtn:focus {
     background-color: #5392B2;
 }
 
+.sortContentContainer{
+    width: 300px;
+    margin: auto;
+}
+
 .sortContent {
+    width: 300px;
     display: none;
     position: absolute;
     background-color: #f6f6f6;
-    width: 100%;
     border: 1px solid #ddd;
     z-index: 1;
     opacity: 90%;
