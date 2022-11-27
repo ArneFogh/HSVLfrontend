@@ -51,16 +51,18 @@
         <button class="exitNewAccountPage">Fortryd</button>
         <h2>OPRET BRUGER</h2>
         <hr>
-        <div class="newUserNameBox">
-            <input type="text"required class="newUserName" name="createUserName" placeholder="Dit ønskede bruger navn her. . .">
-        </div>
-        <div class="newAgeBox">
-            <input type="text"required class="newAge" name="createNewAge" placeholder="Skriv din alder her">
-        </div>
-        <div class="newEmailBox">
-            <input type="text"required class="newEmail" name="createNewEmail" placeholder="Skriv din mail her. . .">
-            <button class="createNewAccount">Opret bruger</button>
-        </div>
+        <form onsubmit="createAccount(event)">
+            <div class="newUserNameBox">
+                <input type="text" class="newUserName" name="createUserName" placeholder="Dit ønskede bruger navn her. . ." required>
+            </div>
+            <div class="newAgeBox">
+                <input type="text" class="newAge" name="createNewAge" placeholder="Skriv din alder her" required>
+            </div>
+            <div class="newEmailBox">
+                <input type="text" class="newEmail" name="createNewEmail" placeholder="Skriv din mail her. . ." required>
+                <button class="createNewAccount">Opret bruger</button>
+            </div>
+        </form>
     </div>
 </div>
 
@@ -71,6 +73,6 @@
 <footer>
     &copy; 2022 HvadSkalViLave.dk
 </footer>
-<script src="script.js"></script>
+<script src="newaccount.js"></script>
 </body>
 </html>
