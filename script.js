@@ -11,12 +11,14 @@ const navLinks = document.querySelectorAll("nav a").forEach(link => {
     link.classList.add("active");
 });
 
+// Fetching data from mostPopular
 fetch('https://hsvl.onrender.com/mostPopular')
     .then(response => response.json())
     .then(mostPopulare => {
         popularActivities(mostPopulare);
     });
 
+// Posting the data from the api to the topPopular list
 function popularActivities(mostPopulare){
     try {
         const popularUl = document.querySelector("ul.topPopular");
@@ -41,7 +43,7 @@ function popularActivities(mostPopulare){
     }
 }
 
-
+// Showing the dropdown menu
 function cityDropDown() {
     document.getElementById("dropDownCity").classList.toggle("show");
 }
