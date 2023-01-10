@@ -580,6 +580,7 @@ fetch('https://hsvl.onrender.com/eksamen')
     .then(response => response.json())
     .then(rgbData => {
         colorArray(rgbData);
+        console.log(rgbData)
     });
 
 function colorArray(rgbData) {
