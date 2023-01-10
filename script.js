@@ -576,13 +576,19 @@ function winterList(HSVL) {
     }
 }
 
-fetch('https://hsvl.onrender.com/eksamen')
+fetch('https://localhost:3000/eksamen')
     .then(response => response.json())
     .then(rgbData => {
         colorArray(rgbData);
         console.log(rgbData)
     });
 
-function colorArray(rgbData) {
-    console.log(rgbData)
+const colorArray = async function (req,res) {
+    const response = await fetch('https://localhost:3000/eksamen')
+    const data = await response.json();
+
+    return data;
+
 }
+
+colorArray().then(data => console.log(data));
