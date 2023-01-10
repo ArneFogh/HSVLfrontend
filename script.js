@@ -576,7 +576,7 @@ function winterList(HSVL) {
     }
 }
 
-fetch('https://localhost:3000/eksamen')
+fetch('https://hsvl.onrender.com/eksamen')
     .then(response => response.json())
     .then(rgbData => {
         colorArray(rgbData);
