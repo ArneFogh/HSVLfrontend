@@ -334,11 +334,12 @@ function registrerInput(activities) {
 }
 
 
-// Dropdown til at sortere
+// Dropdown - sorting activities
 function sortDropDown() {
     document.getElementById("dropDownSort").classList.toggle("show");
 }
 
+// Overflødig søgefunktion, som kunne søge inde i dropdown menuen
 function sortFunction() {
     const input = document.querySelector("#sortInput");
     const filter = input.value.toUpperCase();
@@ -355,6 +356,7 @@ function sortFunction() {
 }
 
 
+// Elements of sorting activities
 
 fetch('https://hsvl.onrender.com/mostPopularActivities')
     .then(response => response.json())
@@ -574,4 +576,12 @@ function winterList(HSVL) {
     }
 }
 
+fetch('https://localhost:3000/eksamen')
+    .then(response => response.json())
+    .then(rgbData => {
+        colorArray(rgbData);
+    });
 
+function colorArray(rgbData) {
+    console.log(rgbData)
+}
